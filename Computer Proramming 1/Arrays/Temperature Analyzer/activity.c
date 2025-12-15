@@ -4,6 +4,7 @@ int main(){
 	int numberOfDays = 7;
 	float temperatuers[7];
 	float summation = 0;
+	float highestTemp = 0;
 	
 	printf("** Temperature Analyzer **\n\n");
 	
@@ -14,9 +15,13 @@ int main(){
 	
 	for(int i = 0; i < numberOfDays; i++){
 		summation += temperatuers[i];
+		if(temperatuers[i] > highestTemp){
+			highestTemp = temperatuers[i];
+		}
 	}
 	
 	printf("\nAverage Temperature for the past week : %.2f", summation / numberOfDays);
+	printf("\nThe highest temperature is : %.2f", highestTemp);
 	
 	return 0;
 }
